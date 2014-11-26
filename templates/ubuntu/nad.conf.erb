@@ -1,0 +1,84 @@
+{
+    "check": {
+        "type": "json",
+        "period": 60,
+        "timeout": 10,
+        "metrics": {
+            "numeric": [
+                "cpu`kernel",
+                "cpu`user",
+                "cpu`wait_io",
+                "fs`/`used_percent",
+                "fs`/mnt`used_percent"
+            ],
+            "text": []
+        },
+        "config": {
+            "port": 2609
+        }
+    },
+    "graphs": {
+        "CPU": {
+            "max_left_y": 100,
+            "style": "area",
+            "datapoints": [
+                {
+                    "name": "kernel",
+                    "metric_name": "cpu`kernel",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": 0,
+                    "derive": "counter",
+                    "hidden": false,
+                    "alpha": 0.3
+                },
+                {
+                    "name": "user",
+                    "metric_name": "cpu`user",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": 0,
+                    "derive": "counter",
+                    "hidden": false,
+                    "alpha": 0.3
+                },
+                {
+                    "name": "wait_io",
+                    "metric_name": "cpu`wait_io",
+                    "metric_type": "numeric",
+                    "axis": "r",
+                    "stack": null,
+                    "derive": "counter",
+                    "hidden": false,
+                    "color": "#ff0000"
+                }
+            ]
+        },
+        "Disk": {
+            "max_left_y": 100,
+            "style": "area",
+            "datapoints": [
+                {
+                    "name": "% used: /",
+                    "metric_name": "fs`/`used_percent",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": null,
+                    "derive": "gauge",
+                    "hidden": false,
+                    "alpha": 0.3
+                },
+                {
+                    "name": "% used: /mnt",
+                    "metric_name": "fs`/mnt`used_percent",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": null,
+                    "derive": "gauge",
+                    "hidden": false,
+                    "alpha": 0.3
+                }
+            ]
+        }
+    }
+}

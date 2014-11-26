@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+export PATH=<%= node['nad']['bin_path'] %>/:$PATH
+export NODE_PATH="/opt/circonus/lib/node_modules"
+
+authtoken=<%= node['nad']['registration']['authtoken'] %>
+target=<%= node['nad']['registration']['target'] %>
+hostname=<%= node['nad']['registration']['hostname'] %>
+brokerid=<%= node['nad']['registration']['brokerid'] %>
+configfile=<%= node['nad']['registration']['configfile'] %>
+
+exec /opt/circonus/sbin/nad --authtoken $authtoken --target $target --hostname $hostname --brokerid $brokerid --configfile $configfile
