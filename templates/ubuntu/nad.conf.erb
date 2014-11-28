@@ -9,7 +9,9 @@
                 "cpu`user",
                 "cpu`wait_io",
                 "fs`/`used_percent",
-                "fs`/mnt`used_percent"
+                "fs`/mnt`used_percent",
+                "vm`memory`total",
+                "vm`memory`used"
             ],
             "text": []
         },
@@ -71,6 +73,31 @@
                 {
                     "name": "% used: /mnt",
                     "metric_name": "fs`/mnt`used_percent",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": null,
+                    "derive": "gauge",
+                    "hidden": false,
+                    "alpha": 0.3
+                }
+            ]
+        },
+        "Memory": {
+            "style": "area",
+            "datapoints": [
+                {
+                    "name": "Total",
+                    "metric_name": "vm`memory`total",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": null,
+                    "derive": "gauge",
+                    "hidden": false,
+                    "alpha": 0.3
+                },
+                {
+                    "name": "Used",
+                    "metric_name": "vm`memory`used",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": null,
