@@ -11,4 +11,5 @@ end
 execute 'register_via_nad' do
   command '/opt/circonus/sbin/register_via_nad.sh'
   action :nothing
+  ignore_failure true
 end

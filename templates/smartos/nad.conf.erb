@@ -8,8 +8,8 @@
                 "cpu`kernel`sys",
                 "cpu`kernel`guest",
                 "cpu`kernel`guest_nice",
-                "disk`/`used_percent",
-                "fs`/mnt`used_percent"
+                "ohai`filesystem`/`percent_used",
+                "vminfo`unix:0:vminfo:freemem"
             ],
             "text": []
         },
@@ -60,17 +60,22 @@
             "datapoints": [
                 {
                     "name": "% used: /",
-                    "metric_name": "fs`/`used_percent",
+                    "metric_name": "ohai`filesystem`/`percent_used",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": null,
                     "derive": "gauge",
                     "hidden": false,
                     "alpha": 0.3
-                },
+                }
+            ]
+        },
+        "Memory": {
+            "style": "area",
+            "datapoints": [
                 {
-                    "name": "% used: /mnt",
-                    "metric_name": "fs`/mnt`used_percent",
+                    "name": "% free",
+                    "metric_name": "vminfo`unix:0:vminfo:freemem",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": null,
