@@ -5,11 +5,12 @@
         "timeout": 10,
         "metrics": {
             "numeric": [
-                "cpu`kernel`sys",
-                "cpu`kernel`guest",
-                "cpu`kernel`guest_nice",
-                "ohai`filesystem`/`percent_used",
-                "vminfo`unix:0:vminfo:freemem"
+                "cpu`kernel",
+                "cpu`user",
+                "cpu`wait_io",
+                "fs`/`used_percent",
+                "vm`memory`total",
+                "vm`memory`used"
             ],
             "text": []
         },
@@ -23,8 +24,8 @@
             "style": "area",
             "datapoints": [
                 {
-                    "name": "kernel-sys",
-                    "metric_name": "cpu`kernel`sys",
+                    "name": "kernel",
+                    "metric_name": "cpu`kernel",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": 0,
@@ -33,8 +34,8 @@
                     "alpha": 0.3
                 },
                 {
-                    "name": "kernel-guest",
-                    "metric_name": "cpu`kernel`guest",
+                    "name": "user",
+                    "metric_name": "cpu`user",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": 0,
@@ -43,8 +44,8 @@
                     "alpha": 0.3
                 },
                 {
-                    "name": "kernel-guest_nice",
-                    "metric_name": "cpu`kernel`guest_nice",
+                    "name": "wait_io",
+                    "metric_name": "cpu`wait_io",
                     "metric_type": "numeric",
                     "axis": "r",
                     "stack": null,
@@ -60,7 +61,7 @@
             "datapoints": [
                 {
                     "name": "% used: /",
-                    "metric_name": "ohai`filesystem`/`percent_used",
+                    "metric_name": "fs`/`used_percent",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": null,
@@ -74,8 +75,18 @@
             "style": "area",
             "datapoints": [
                 {
-                    "name": "% free",
-                    "metric_name": "vminfo`unix:0:vminfo:freemem",
+                    "name": "Total",
+                    "metric_name": "vm`memory`total",
+                    "metric_type": "numeric",
+                    "axis": "l",
+                    "stack": null,
+                    "derive": "gauge",
+                    "hidden": false,
+                    "alpha": 0.3
+                },
+                {
+                    "name": "Used",
+                    "metric_name": "vm`memory`used",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": null,
