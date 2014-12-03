@@ -4,6 +4,6 @@ maintainer_email 'blake.irvin@yetu.com'
 license          'MIT'
 description      'Installs/Configures nad-o-matic'
 long_description 'Installs/Configures nad-o-matic'
-version          '0.2.1'
+version          '0.3.0'
 
 depends 'nad'
