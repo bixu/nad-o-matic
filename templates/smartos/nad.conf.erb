@@ -5,9 +5,8 @@
         "timeout": 10,
         "metrics": {
             "numeric": [
-                "cpu`kernel`sys",
-                "cpu`kernel`guest",
-                "cpu`kernel`guest_nice",
+                "cpu`kernel",
+                "cpu`user",
                 "ohai`filesystem`/`percent_used",
                 "vminfo`unix:0:vminfo:freemem"
             ],
@@ -23,8 +22,8 @@
             "style": "area",
             "datapoints": [
                 {
-                    "name": "kernel-sys",
-                    "metric_name": "cpu`kernel`sys",
+                    "name": "kernel",
+                    "metric_name": "cpu`kernel",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": 0,
@@ -33,24 +32,14 @@
                     "alpha": 0.3
                 },
                 {
-                    "name": "kernel-guest",
-                    "metric_name": "cpu`kernel`guest",
+                    "name": "user",
+                    "metric_name": "cpu`user",
                     "metric_type": "numeric",
                     "axis": "l",
                     "stack": 0,
                     "derive": "counter",
                     "hidden": false,
                     "alpha": 0.3
-                },
-                {
-                    "name": "kernel-guest_nice",
-                    "metric_name": "cpu`kernel`guest_nice",
-                    "metric_type": "numeric",
-                    "axis": "r",
-                    "stack": null,
-                    "derive": "counter",
-                    "hidden": false,
-                    "color": "#ff0000"
                 }
             ]
         },
