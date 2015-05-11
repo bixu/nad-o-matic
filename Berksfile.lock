@@ -1,0 +1,16 @@
+DEPENDENCIES
+  nad
+    git: git://github.com/bixu/nad-cookbook.git
+    revision: a9f1b5d3d610a72857d9876cd9f6090be7738127
+  nad-o-matic
+    path: .
+    metadata: true
+
+GRAPH
+  nad (0.0.6)
+  nad-o-matic (0.5.1)
+    nad (>= 0.0.0)
+    smf (>= 0.0.0)
+  rbac (1.0.3)
+  smf (2.2.6)
+    rbac (>= 1.0.1)

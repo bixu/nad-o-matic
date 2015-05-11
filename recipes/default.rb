@@ -1,3 +1,5 @@
+include_recipe 'nad'
+
 template "#{node['nad']['install_path']}/sbin/register_via_nad.sh" do
   source 'register_via_nad.sh.erb'
   mode '0700'
